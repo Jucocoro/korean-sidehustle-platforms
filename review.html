@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>플랫폼 리뷰 | MonetIQ KR</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .review-container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: var(--card-bg-color);
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+        }
+        .platform-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 3px solid var(--accent-color);
+        }
+        .platform-name {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+        }
+        .platform-description {
+            font-size: 1.1rem;
+            color: var(--text-color-secondary);
+        }
+        .review-section {
+            margin: 2rem 0;
+        }
+        .review-section h2 {
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+        .rating-stars {
+            color: var(--accent-color);
+            font-size: 1.5rem;
+            margin: 1rem 0;
+        }
+        .pros-cons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        .pros, .cons {
+            padding: 1.5rem;
+            border-radius: 12px;
+        }
+        .pros {
+            background: rgba(0, 184, 169, 0.1);
+            border: 2px solid var(--accent-color);
+        }
+        .cons {
+            background: rgba(255, 100, 100, 0.1);
+            border: 2px solid #ff6464;
+        }
+        .pros h3, .cons h3 {
+            margin-top: 0;
+        }
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-color), var(--accent-hover));
+            color: #ffffff;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            margin: 1rem 0;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 2rem;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-container">
+            <div class="logo">MonetIQ KR</div>
+        </div>
+    </header>
+
+    <main>
+        <div class="review-container">
+            <div class="platform-header">
+                <h1 class="platform-name" id="platformName">플랫폼 리뷰</h1>
+                <p class="platform-description" id="platformDesc">플랫폼에 대한 상세 리뷰입니다.</p>
+            </div>
+
+            <div class="review-section">
+                <h2>⭐ 종합 평가</h2>
+                <div class="rating-stars">★★★★☆ 4.0/5.0</div>
+                <p id="overallReview">이 플랫폼은 부업 초보자에게 추천합니다. 사용이 쉽고 수익 창출까지의 시간이 짧습니다.</p>
+            </div>
+
+            <div class="pros-cons">
+                <div class="pros">
+                    <h3>✅ 장점</h3>
+                    <ul id="prosList">
+                        <li>진입장벽이 낮음</li>
+                        <li>플랫폼 인지도가 높음</li>
+                        <li>고객 풀이 넓음</li>
+                    </ul>
+                </div>
+                <div class="cons">
+                    <h3>⚠️ 단점</h3>
+                    <ul id="consList">
+                        <li>수수료가 다소 높음</li>
+                        <li>초기 평판 쌓기 어려움</li>
+                        <li>경쟁이 치열함</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="review-section">
+                <h2>💰 예상 수익</h2>
+                <p id="earningsInfo">
+                    <strong>초보:</strong> 월 10-30만원<br>
+                    <strong>중급:</strong> 월 50-100만원<br>
+                    <strong>고급:</strong> 월 150만원 이상
+                </p>
+            </div>
+
+            <div class="review-section">
+                <h2>🎯 추천 대상</h2>
+                <p id="targetAudience">
+                    - 프리랜서로 활동하고 싶은 분<br>
+                    - 전문 기술이 있는 분<br>
+                    - 시간 관리가 자유로운 분
+                </p>
+            </div>
+
+            <a href="#" class="cta-button" id="platformLink">플랫폼 바로가기</a>
+
+            <a href="index.html" class="back-link">← 목록으로 돌아가기</a>
+        </div>
+    </main>
+
+    <footer class="site-footer-bottom">
+        <p>&copy; 2026 MonetIQ KR. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // URL에서 platform 파라미터 가져오기
+        const urlParams = new URLSearchParams(window.location.search);
+        const platform = urlParams.get('platform');
+
+        // 플랫폼 데이터
+        const platformData = {
+            '크몽': {
+                name: '크몽 (Kmong)',
+                desc: '디자인, 개발, 마케팅 등 전문 프리랜서 플랫폼',
+                rating: '★★★★☆ 4.2/5.0',
+                review: '크몽은 국내 최대 프리랜서 플랫폼입니다. IT, 디자인 전문가에게 추천합니다.',
+                pros: ['높은 단가', '다양한 카테고리', '안정적인 결제 시스템'],
+                cons: ['20% 수수료', '초기 신뢰도 쌓기 어려움', '전문성 필요'],
+                earnings: '<strong>초보:</strong> 월 30-50만원<br><strong>중급:</strong> 월 100-200만원<br><strong>고급:</strong> 월 300만원 이상',
+                target: '- IT/디자인 전문가<br>- 재택근무 원하는 분<br>- 포트폴리오 보유자',
+                link: 'https://kmong.com'
+            },
+            '탈잉': {
+                name: '탈잉 (Taling)',
+                desc: '1:1 레슨, 그룹 수업 중심의 강의 플랫폼',
+                rating: '★★★★☆ 4.0/5.0',
+                review: '탈잉은 오프라인 수업에 강점이 있습니다. 사람과의 직접 소통을 좋아한다면 추천합니다.',
+                pros: ['자격증 없어도 가능', '재수강 고객 확보 쉬움', '지역 커뮤니티 형성'],
+                cons: ['오프라인 이동 필요', '시간 투자 많음', '수수료 20-25%'],
+                earnings: '<strong>초보:</strong> 월 20-40만원<br><strong>중급:</strong> 월 80-150만원<br><strong>고급:</strong> 월 200만원 이상',
+                target: '- 강의 경험이 있는 분<br>- 취미를 수익화하고 싶은 분<br>- 오프라인 활동 선호',
+                link: 'https://taling.me'
+            },
+            '위시켓': {
+                name: '위시켓 (Wishket)',
+                desc: 'IT 프로젝트 아웃소싱 전문 플랫폼',
+                rating: '★★★★★ 4.5/5.0',
+                review: '위시켓은 고단가 IT 프로젝트가 많습니다. 개발자에게 최적화된 플랫폼입니다.',
+                pros: ['높은 프로젝트 단가', 'IT 전문 플랫폼', '장기 계약 가능'],
+                cons: ['높은 진입장벽', '전문성 필수', '경쟁 치열'],
+                earnings: '<strong>초보:</strong> 월 100-200만원<br><strong>중급:</strong> 월 300-500만원<br><strong>고급:</strong> 월 700만원 이상',
+                target: '- 웹/앱 개발자<br>- 프로젝트 경험 풍부한 분<br>- 프리랜서 경력자',
+                link: 'https://www.wishket.com'
+            }
+        };
+
+        // 플랫폼 데이터 표시
+        if (platform && platformData[platform]) {
+            const data = platformData[platform];
+            document.getElementById('platformName').textContent = data.name;
+            document.getElementById('platformDesc').textContent = data.desc;
+            document.querySelector('.rating-stars').textContent = data.rating;
+            document.getElementById('overallReview').textContent = data.review;
+            
+            document.getElementById('prosList').innerHTML = data.pros.map(p => `<li>${p}</li>`).join('');
+            document.getElementById('consList').innerHTML = data.cons.map(c => `<li>${c}</li>`).join('');
+            
+            document.getElementById('earningsInfo').innerHTML = data.earnings;
+            document.getElementById('targetAudience').innerHTML = data.target;
+            document.getElementById('platformLink').href = data.link;
+        } else {
+            document.getElementById('platformName').textContent = '플랫폼을 찾을 수 없습니다';
+            document.getElementById('platformDesc').textContent = '올바른 플랫폼 이름을 선택해주세요.';
+        }
+    </script>
+</body>
+</html>

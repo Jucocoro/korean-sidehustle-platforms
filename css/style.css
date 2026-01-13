@@ -48,6 +48,36 @@ body {
     color: var(--accent-color);
 }
 
+#google_translate_element {
+    margin-left: 1rem;
+}
+
+#google_translate_element .goog-te-gadget {
+    font-family: var(--font-family-main);
+    font-size: 0.9rem;
+}
+
+#google_translate_element .goog-te-gadget-simple {
+    background-color: var(--card-bg-color);
+    border: 1px solid var(--border-color);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+}
+
+#google_translate_element .goog-te-gadget-simple:hover {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+.goog-te-banner-frame {
+    display: none !important;
+}
+
+body {
+    top: 0 !important;
+}
+
 .search-bar {
     flex-grow: 1;
     display: flex;

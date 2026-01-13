@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hustle Korea | 한국 부업 플랫폼 가이드</title>
+    <meta name="description" content="크몽, 탈잉, 숨고 등 한국 최고의 부업 플랫폼 비교. 프리랜서, 강의, 제휴마케팅으로 월 100만원+ 수익 창출하세요!">
+    <meta name="keywords" content="hustle korea, 부업, 부업 추천, 크몽, 탈잉, 숨고, 투잡, 프리랜서, 재택 부업, N잡러, 사이드허슬">
+    <link rel="icon" href="https://storage.googleapis.com/gemini-prod/images/sidehustle_favicon.png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-container">
+            <div class="logo">Hustle Korea <span style="font-size: 0.5em; color: #999; font-weight: 400;">한국 부업 플랫폼 가이드</span></div>
+            <div class="search-bar">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/></svg>
+                <input type="text" id="searchInput" placeholder="어떤 부업을 찾고 계신가요?">
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="featured-reports">
+            <h2 class="section-title">부업 플랫폼 심층 비교</h2>
+            <div class="report-cards-container">
+                <a href="comparison-kmong-taling.html" class="report-card">
+                    <div class="report-card-content">
+                        <span class="report-tag">프리랜스</span>
+                        <h3>크몽 vs 탈잉, 어디서 시작해야 할까?</h3>
+                        <p>초보자도 쉽게 시작 가능한 부업 플랫폼 선택 가이드</p>
+                    </div>
+                </a>
+                <a href="comparison-class-platforms.html" class="report-card">
+                    <div class="report-card-content">
+                        <span class="report-tag">강의</span>
+                        <h3>클래스101 vs 인프런, 어디가 더 벌릴까?</h3>
+                        <p>온라인 강의 플랫폼 수익률 및 난이도 실전 비교</p>
+                    </div>
+                </a>
+                <a href="guide-affiliate-marketing.html" class="report-card">
+                    <div class="report-card-content">
+                        <span class="report-tag">제휴마케팅</span>
+                        <h3>쿠팡 파트너스로 월 50만원 벌기 (실전 가이드)</h3>
+                        <p">0원으로 시작해서 블로그 제휴 수익 만드는 완벽 로드맵</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <div class="filter-container">
+            <button class="filter-btn active" data-category="all">All</button>
+            <button class="filter-btn" data-category="freelance">프리랜스</button>
+            <button class="filter-btn" data-category="teaching">강의/클래스</button>
+            <button class="filter-btn" data-category="service">생활서비스</button>
+            <button class="filter-btn" data-category="dev">IT/개발</button>
+            <button class="filter-btn" data-category="selling">판매</button>
+            <button class="filter-btn" data-category="affiliate">제휴마케팅</button>
+        </div>
+        <div id="platform-grid" class="masonry-grid">
+            <!-- 플랫폼 카드가 여기에 동적으로 추가됩니다. -->
+        </div>
+    </main>
+
+    <footer class="site-footer-bottom">
+        <p>&copy; 2026 SideHustle Guide. All Rights Reserved.<br>이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</p>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
